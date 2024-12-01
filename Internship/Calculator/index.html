@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Calculator</title>
+    <style>
+        
+        body
+        {
+            font-family:'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /*margin: 0;*/
+            background-color: #574f4fc9;
+        }
+        .calculator
+        {
+            background-color: #b584c9;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(207, 194, 194, 0.021);
+            text-align: center;
+        }
+        .display
+        {
+            background-color: #d4ebff;
+            border-radius: 10px;
+            height: 50px;
+            font-size: 1.8em;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Ensure long results can be scrolled */
+        }
+        .buttons
+        {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button
+        {
+            background-color: #000407;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        button:hover
+        {
+            background-color: #970076;
+        }
+        button:active
+        {
+            transform: scale(0.95);
+        }
+
+        /* Responsive design */
+        @media (max-width: 400px)
+        {
+            .calculator
+            {
+                padding: 15px;
+                width: 90%;
+            }
+            button
+            {
+                font-size: 1em;
+                padding: 8px;
+            }
+            .display
+            {
+                font-size: 1.5em;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>+</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>*</button>
+            <button>0</button>
+            <button>C</button>
+            <button>=</button>
+            <button>/</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        let currentInput = '';
+        let previousInput = '';
+        let operator = null;
+        let resultCalculated = false;
+
+        function calculate() 
+        {
+            const num1 = parseFloat(previousInput);
+            const num2 = parseFloat(currentInput);
+
+            if (isNaN(num1) || isNaN(num2)) return 'Error';
+
+            switch (operator) 
+            {
+                case '+': return num1 + num2;
+                case '-': return num1 - num2;
+                case '*': return num1 * num2;
+                case '/': return num2 !== 0 ? num1 / num2 : 'Error';
+                default: return 0;
+            }
+        }
+
+        document.querySelectorAll('.buttons button').forEach(button => 
+        {
+            button.addEventListener('click', () => 
+            {
+                const value = button.textContent;
+
+                if (!isNaN(value))
+                { 
+                    if (resultCalculated) 
+                    { 
+                        currentInput = value; 
+                        resultCalculated = false; 
+                    } else 
+                    {
+                        currentInput += value;
+                    }
+                } else if (value === 'C') 
+                { 
+                    currentInput = '';
+                    previousInput = '';
+                    operator = null;
+                } else if (value === '=') 
+                { 
+                    if (currentInput && previousInput && operator) 
+                    {
+                        currentInput = calculate().toString();
+                        previousInput = '';
+                        operator = null;
+                        resultCalculated = true;
+                    }
+                } else 
+                { 
+                    if (currentInput) 
+                    {
+                        if (previousInput && operator && !resultCalculated) 
+                        {
+                            previousInput = calculate().toString();
+                        } else 
+                        {
+                            previousInput = currentInput;
+                        }
+                        currentInput = '';
+                        operator = value;
+                        resultCalculated = false;
+                    }
+                }
+                display.textContent = currentInput || previousInput || '0';
+            });
+        });
+    </script>
+</body>
+</html>

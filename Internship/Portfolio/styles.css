@@ -1,0 +1,139 @@
+
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  header.hero 
+  {
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('bg1.jpg') no-repeat center center / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* White text for better visibility */
+  }
+  
+  
+  nav 
+  {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+  }
+  
+  .logo 
+  {
+    font-size: 1.5em;
+    color:aquamarine;
+  }
+  
+  .nav-links 
+  {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+  }
+  
+  .nav-links a 
+  {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover 
+  {
+    color: #ff5722;
+  }
+  
+  .hero-content 
+  {
+    text-align: center;
+  }
+  
+  .hero-content h1 
+  {
+    font-size: 3em;
+  }
+  
+  .hero-content h2 
+  {
+    font-size: 2em;
+  }
+  
+  .hero-buttons .btn 
+  {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+  }
+  
+  .hero-buttons .btn:hover 
+  {
+    background-color: #ff784e;
+  }
+  
+  .section 
+  {
+    padding: 2em;
+    text-align: center;
+  }
+  
+  .profile-pic 
+  {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+  }
+  
+  .skills-list 
+  {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-list li 
+  {
+    background: #333;
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .projects-container 
+  {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .project 
+  {
+    background: #222;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+  }
+  
+  footer 
+  {
+    text-align: center;
+    padding: 1em;
+    background: #333;
+  }
+  

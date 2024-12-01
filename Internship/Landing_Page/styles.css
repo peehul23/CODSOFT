@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container 
+{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+header 
+{
+    background-color: #212c38;
+    text-shadow: blue;
+    padding: 20px 0;
+    text-align: center;
+    background-image: url(gym5.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header .logo 
+{
+    color: rgb(227, 255, 104);
+    -webkit-text-stroke: 1px black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+header nav ul 
+{
+    list-style: none;
+    padding-top: 10px;
+}
+
+header nav ul li 
+{
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a 
+{
+    color: rgb(33, 15, 100);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fffc3d, 0 0 40px #e6d27d, 0 0 50px #f0f187;
+    font-family: fantasy;
+    text-decoration-color:#6c9ed6;
+    text-decoration: none;
+    text-align:right;
+}
+
+.hero 
+{
+    background: #29333a;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 
+{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p 
+{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color:aquamarine;
+}
+
+.cta-button 
+{
+    background-color: #b60303;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.products, .services, .contact 
+{
+    padding: 50px 0;
+    text-align: center;
+}
+
+.products h2, .services h2, .contact h2 
+{
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.product-cards, .service-cards 
+{
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.product-card, .service-card 
+{
+    background-color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color:#d4e689;
+}
+
+.product-card img, .service-card img 
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-card h3, .service-card h3 
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.product-card p, .service-card p 
+{
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:brown;
+}
+
+.footer 
+{
+    background-color: #050505;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p 
+{
+    font-size: 16px;
+}
